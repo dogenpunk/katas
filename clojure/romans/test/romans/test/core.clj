@@ -1,0 +1,36 @@
+(ns romans.test.core
+  (:use [romans.core])
+  (:use [clojure.test]))
+
+(deftest test-romans
+(are [arabic roman] (= roman (convert-to-roman arabic))
+   1 "I"
+   2 "II"
+   3 "III"
+   4 "IV"
+   5 "V"
+   6 "VI"
+   9 "IX"
+   10 "X"
+   11 "XI"
+   19 "XIX"
+   20 "XX"
+   39 "XXXIX"
+   40 "XL"
+   49 "XLIX"
+   50 "L"
+   89 "LXXXIX"
+   90 "XC"
+   99 "XCIX"
+   100 "C"
+   199 "CXCIX"
+   300 "CCC"
+   399 "CCCXCIX"
+   400 "CD"
+   499 "CDXCIX"
+   500 "D"
+   899 "DCCCXCIX"
+   900 "CM"
+   999 "CMXCIX"
+   1000 "M"
+   3999 "MMMCMXCIX"))
